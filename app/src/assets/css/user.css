@@ -1,0 +1,39 @@
+html,body {
+	height: 100%;
+}
+body{
+	background-image: url(/assets/img/insurance-beijing.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.user-title{
+	font-size: 36px;
+	margin: 50px 0;
+}
+.user-kv{
+	font-size: 20px;
+	color:#333333;
+	display: flex;
+	flex-direction: column;
+	margin: 0 15%;
+}
+.user-item{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.user-item>span{
+	width: 23%;
+}
+.user-item>input{
+	height: 45px;
+	line-height: 45px;
+	width: 70%;
+	padding: 0 10px;
+	font-size: 20px;
+	box-shadow: 4px 4px 10px 4px rgba(4,0,0,0.25);
+	border: 0px solid #333333;
+}

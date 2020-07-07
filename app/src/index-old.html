@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>商品系统示例</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div>
+      <div><label>商品代码</label><input type="text" id="code">
+        <button type="button" style="float: right;margin-right: 40px;" onclick="App.update()">上架/下架</button>
+       <button type="button" style="float: right;margin-right: 40px;" onclick="App.selectOne()">查询</button>
+      </div>
+    </div>
+    <div style="margin-top: 25px;">
+      <button type="button" class="show">录入</button>
+      <button type="button" class="save" onclick="App.save()">保存</button>
+      <div class="saveinfo">
+        <label>商品代码</label><input type="text"  id="codes">
+        <label style="margin-right: 30px;"></label>
+        <label>名称</label><input type="text" id="name">
+        <label style="margin-right: 30px;"></label>
+        <label>数量</label><input type="text" id="count">
+        <label style="margin-right: 30px;"></label>
+        <label>上/下架</label><select id="switch" style="height: 39px;">
+                <option value="1">上架</option>
+                <option value="2">下架</option>
+              </select>
+      </div>
+    </div>
+    <br>
+    <table class="gridtable">
+      <thead>
+      <tr>
+        <th style="width: 10px;"></th>
+        <th>商品代码</th>
+        <th>名称</th>
+        <th>数量</th>
+        <th>上/下架</th>
+      </tr>
+      </thead>
+    </table>
+
+    <p id="status"></p>
+  </body>
+<script>
+$(function(){
+
+    $('.show').click(function(){
+        $(this).css("display","none");
+        $('.save').css("display","block");
+        $('.saveinfo').css("display","block");
+    })
+
+    $("tbody").on('click',"input[name='checkbox']",function(){
+      var s= $(this).prop("checked");
+      // 取消全部checkbox的选中
+      $("input[name='checkbox']").prop("checked", false);
+      // 设置选中当前
+      if(s==false){
+        $(this).prop("checked", false);
+      }else{
+        $(this).prop("checked", true);
+      }
+      
+    });
+})
+</script>
+</html>
