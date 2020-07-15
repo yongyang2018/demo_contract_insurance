@@ -63,7 +63,7 @@ a{text-decoration:none;}
 }
 .box-frame{ 
 	height: auto;
-	width: 75%;
+	width: 90%;
 	border: 5px solid rgb(255, 255, 255);
 	margin: 0px auto;
 	box-shadow: 5px 5px 10px 5px rgba(4,0,0,0.25);
@@ -89,6 +89,10 @@ a{text-decoration:none;}
 }
 .box-but:hover{
 	background-color: #E1E1E1;
+}
+.font-6{
+	font-weight: 600;
+	font-size: 24px;
 }
 @media screen and (max-width:768px){
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>保险</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../assets/css/safe.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/select.css"/>
+		<script src="../index.js"></script>
+	</head>
+	<body>
+		
+		<div id="insurance-select-header"></div>		
+		<div class="safe-conent">
+
+			<!-- <div class="top_right">
+				<a><img src="../assets/img/set.png"></a>
+			</div> -->
+		
+			<div class="safe-item">
+
+				<div class="safe-title">
+					以太坊保险查询网站
+				</div>
+				<div class="safe-wrap">
+					<input type="text" placeholder="请输入事务哈希值" id="hash"/>
+					<div class="safe-wrap-img" id="safe-search">
+						<img src="../assets/img/addressee-search.png">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			$("#insurance-select-header").load("insurance-select-header.html");
+			window.onload = function() {
+				document.getElementById("safe-search").onclick = function() {
+					let hash = $("#hash").val();
+					if(hash == ""){
+						alert("请输入事务哈希值");
+						return;
+					}
+					App.select_claim(hash);
+				}
+			}
+		</script>
+	</body>
+</html>

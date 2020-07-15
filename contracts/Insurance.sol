@@ -46,51 +46,39 @@ contract Insurance is owned{
     //记录所有数据映射
     mapping (uint => Comminfo) commOf;
     
-    uint[] lengths;
-
     constructor() public{}
 
-    //获取长度
-    function getlength() public view returns (uint len){
-        return lengths.length;
-    }
 
     //保存
     function saveinfo(string memory flightInfo ,string memory time,string memory number) public{
-        uint les = lengths.length;
-
-        commOf[les].flightInfo = flightInfo;
-        commOf[les].time=time;
-        commOf[les].number=number;
-        commOf[les].status=1;
-        lengths.push(les);
+        commOf[0].flightInfo = flightInfo;
+        commOf[0].time=time;
+        commOf[0].number=number;
+        commOf[0].status=1;
     }
 
     //清空
     function deleteinfo() public{
-        uint les = lengths.length;
-
-        commOf[les].flightInfo = "";
-        commOf[les].time="";
-        commOf[les].number="";
-        commOf[les].status=0;
-        lengths = new uint[](1);
+        commOf[0].flightInfo = "";
+        commOf[0].time="";
+        commOf[0].number="";
+        commOf[0].status=0;
     }
  
     //查询数据
-    function selectAll(uint key) public view returns (string memory flightInfo ,string memory time,string memory number,uint8 status,uint id){
-        flightInfo=commOf[key].flightInfo;
-        time=commOf[key].time;
-        number=commOf[key].number;
-        status=commOf[key].status;  
-        id=key;
+    function selectAll() public view returns (string memory flightInfo ,string memory time,string memory number,uint8 status,uint id){
+        flightInfo=commOf[0].flightInfo;
+        time=commOf[0].time;
+        number=commOf[0].number;
+        status=commOf[0].status;  
+        id=0;
 
         return (flightInfo,time,number,status,id);
     }
 
     //审核
-    function update(uint key) public{
-        commOf[key].status=2;
+    function update() public{
+        commOf[0].status=2;
     }
 
 }

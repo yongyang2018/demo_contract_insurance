@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>航空公司</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, aviation-scalable=0" name="viewport">
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/aviation.css" />
+		<script src="../index.js"></script>
+		<style type="text/css">
+			.aviation-chain{
+				font-size: 20px;
+				display: flex;
+				flex-direction: column;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="insurance-select-header"></div>
+
+		<div id="" class="wid-1200">
+			<div class="">
+				<div class="outer">
+					<div class="box-frame">
+						
+						<div class="select-sender-kv">
+						
+							<div class="select-sender-info">
+								<span>航空公司信息：</span>
+							</div>
+							<div class="select-sender-info">
+								<span>区块高度：</span>
+								<span><a id="block_height"></a></span>
+							</div>
+							<div class="select-sender-info">
+								<span>区块哈希：</span>
+								<span><a id="block_hash"></a></span>
+							</div>
+							<div class="select-sender-info">
+								<span>事务哈希：</span>
+								<span><a id="tx_hash"></a></span>
+							</div>
+							
+		
+						</div>
+						<div class="box-donate">
+							<div class="cross-donate donate-info">
+								<span>用户信息：</span>
+							</div>
+							<div class="cross-donate">
+								<span>用户姓名：</span>
+								<span>张三丰</span>
+							</div>
+							<div class="cross-donate">
+								<span>航班信息：</span>
+								<span><a id="aviation-flight"></a></span>
+							</div>
+							<div class="cross-donate">
+								<span>航班信息：</span>
+								<span><a id="aviation-number"></a></span>
+							</div>
+							<div class="cross-donate">
+								<span>是否延误：</span>
+								<span>是</span>
+							</div>
+							
+						</div>
+						<div class="text-center">
+							<button class="box-but" id="but-aviation">确认上链</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#insurance-select-header").load("insurance-select-header.html");
+			window.onload = function() {
+				App.aviation();
+				document.getElementById("but-aviation").onclick = function() {
+					App.update();
+				}
+			}
+		</script>
+	</body>
+</html>

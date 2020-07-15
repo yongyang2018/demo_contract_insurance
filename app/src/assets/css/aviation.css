@@ -1,5 +1,8 @@
+*{margin: 0;padding: 0;}
 html,body {
 	height: 100%;
+	font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+	font-style: normal;
 }
 body{
 	background-image: url(/assets/img/insurance-beijing.jpg);
@@ -7,54 +10,79 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
-.aviation-title{
-	font-size: 48px;
-	font-weight: 500;
-	margin: 40px 10%;
-	display: flex;
+.select-sender-title{
+	font-size: 24px;
+	margin: 50px 0 30px 0;
+	font-weight: bold;
 }
-.aviation-kv{
-	font-size: 20px;
-	color:#333333;
-	display: flex;
-	justify-content: space-between;
-	margin: 0 10%;
-}
-.aviation-item{
+.select-sender-kv{
 	width: 100%;
-	font-size: 26px;
+	font-size: 18px;
+	color:#000000;
 	display: flex;
-	align-items: center;
-	margin-bottom: 40px;
+	flex-direction: column;
+	margin-top: 20px;
+	font-weight: 400;
 }
-.aviation-item>span{
-	width: 23%;
-}
-.aviation-item>input{
-	height: 45px;
-	line-height: 45px;
-	width: 70%;
-	padding: 0 10px;
-	font-size: 20px;
-	box-shadow: 4px 4px 10px 4px rgba(4,0,0,0.25);
-	border: 0px solid #333333;
-}
-
-.aviation-chain-item{
-	width: 70%;
-	display: flex;
-	align-items: center;
-	margin: 20px 15%;
-}
-.aviation-chain-item>span:nth-child(1){
-	margin-right: 30px;
-}
-
-.aviation-box-frame{
+.box-donate{ 
 	height: auto;
-	width: 75%;
-	border: 5px solid rgb(255, 255, 255);
-	margin: 20px auto 0;
+	width: 800px;
+	border: 3px solid rgb(255, 255, 255);
+	margin: 20px auto;
 	box-shadow: 5px 5px 10px 5px rgba(4,0,0,0.25);
 	position: relative;
+	padding: 20px;
+	font-size: 18px;
+}
+.select-sender-info{
+	padding: 0 8% 0 15%;
+	display: flex;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.cross-donate{
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.donate-info{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	font-weight: 600;
+}
+.donated-content{
+	flex-direction: column;
+}
+
+.select-sender-info>span:first-child{
+	margin-right: 10px;
+}
+
+.span-flex{
+	flex: 1;
+}
+.wid-1200{
+	text-align: left;
+}
+.select-sender-title{
+	text-align: center;
+}
+.countersign{
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+@media screen and (max-width:1300px){
+	.logistics-item,.select-sender-info,.cross-donate{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.cross-donate>span:nth-child(2){
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: inline-block;
+	}
 }
